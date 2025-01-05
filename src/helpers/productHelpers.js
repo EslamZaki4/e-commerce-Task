@@ -1,23 +1,26 @@
+import { setCategories, setError, setFilteredCategories, setFilteredProducts, setLoading, setProducts } from "../redux/products";
 import { api } from "./apiInstance";
 
+
+
 // Fetch Data from API
-export const fetchData = async (setProducts, setFilteredProducts, setCategories, setFilteredCategories) => {
+export const fetchProductsAndCategories = () => async (dispatch) => {
+ 
+  dispatch(setLoading(true));
   try {
     const [productsRes, categoriesRes] = await Promise.all([
-      api.get('/products').catch(() => ({ data: [] })),
-      api.get('/categories').catch(() => ({ data: [] }))
+      api.get('/products'),
+      api.get('/categories'),
     ]);
 
-    const productsData = productsRes.data || [];
-    const categoriesData = categoriesRes.data || [];
-
-    setProducts(productsData);
-    setFilteredProducts(productsData);
-    setCategories(categoriesData);
-    setFilteredCategories(categoriesData);
+    dispatch(setProducts(productsRes.data));
+    dispatch(setCategories(categoriesRes.data));
+    dispatch(setFilteredProducts(productsRes.data));
+    dispatch(setFilteredCategories(categoriesRes.data));
   } catch (error) {
-    console.error('Unexpected error fetching data:', error);
-    setFilteredProducts([]);
+    dispatch(setError(error.response?.data || 'Failed to fetch data'));
+  } finally {
+    dispatch(setLoading(false)); 
   }
 };
 

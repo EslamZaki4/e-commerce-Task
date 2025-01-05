@@ -6,6 +6,7 @@ const Wishlist = () => {
   const wishlist = useSelector((state) => state.wishlist);
 console.log(wishlist)
   return (
+    
     <div className="container py-4">
       <h2 className="text-2xl font-bold mb-4 text-primary">Wishlist</h2>
       {wishlist?.length > 0 ? (

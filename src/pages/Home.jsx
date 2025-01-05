@@ -1,57 +1,44 @@
-import { useState, useEffect, useCallback, useMemo } from 'react';
+import React, { useEffect, useCallback } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import Input from '../components/atoms/Input';
 import ProductList from '../components/organisms/ProductList';
-import { fetchData, filterProducts, debounce } from '../helpers/productHelpers';
+import { debounce, fetchProductsAndCategories } from '../helpers/productHelpers';
 import CategoryFilter from '../components/organisms/CategoryFilter';
+import { setSearchTerm, setSelectedCategory } from '../redux/products';
+
 
 const HomePage = () => {
-  const [products, setProducts] = useState([]);
-  const [filteredProducts, setFilteredProducts] = useState([]);
-  const [categories, setCategories] = useState([]);
-  const [filteredCategories, setFilteredCategories] = useState([]);
-  const [searchTerm, setSearchTerm] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('');
+  const dispatch = useDispatch();
+  const {
+    filteredProducts,
+    filteredCategories,
+    loading,
+    error,
+  } = useSelector((state) => state.products);
 
   
   useEffect(() => {
-    const loadProducts = async () => {
-      try {
-        await fetchData(setProducts, setFilteredProducts, setCategories, setFilteredCategories );
-      } catch (error) {
-        console.error("Failed to fetch products", error);
-      }
-    };
-    loadProducts();
-  }, []);
+    dispatch(fetchProductsAndCategories());
+  }, [dispatch]);
 
- 
-  useEffect(() => {
-    const { filtered, updatedCategories } = filterProducts(
-      products,
-      categories,
-      searchTerm,
-      selectedCategory
-    );
-    setFilteredProducts(filtered);
-    setFilteredCategories(updatedCategories);
-  }, [products, categories, searchTerm, selectedCategory]);
 
- 
   const debouncedSearch = useCallback(
     debounce((value) => {
-      setSearchTerm(value);
+      dispatch(setSearchTerm(value));
     }, 300),
-    [setSearchTerm]
+    [dispatch]
   );
 
-  
+  const handleCategorySelect = (category) => {
+    dispatch(setSelectedCategory(category));
+  };
 
   return (
     <div className="container py-4">
-      <div className="flex flex-col md:flex-row  items-center mb-4 gap-4">
+      <div className="flex flex-col md:flex-row items-center mb-4 gap-4">
         <CategoryFilter
           categories={filteredCategories}
-          onSelectCategory={setSelectedCategory}
+          onSelectCategory={handleCategorySelect}
         />
         <Input
           type="text"
@@ -60,7 +47,20 @@ const HomePage = () => {
           className="w-full"
         />
       </div>
-      <ProductList products={filteredProducts} />
+
+     
+      {loading ? (
+        <div className="flex justify-center items-center h-48">
+          <span className="animate-spin rounded-full h-10 w-10 border-t-4 border-b-4 border-primary"></span>
+          <span className="ml-3 text-lg">Loading...</span>
+        </div>
+      ) : error ? (
+        <div className="text-center text-red-500">
+          {error || 'Failed to load products'}
+        </div>
+      ) : (
+        <ProductList products={filteredProducts} />
+      )}
     </div>
   );
 };
