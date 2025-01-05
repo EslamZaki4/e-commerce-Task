@@ -1,0 +1,159 @@
+
+{
+  "products": [
+      {
+          "id": 1,
+          "name": "Product B1",
+          "price": 52.86,
+          "category": "8",
+          "image": "https://img.edilportale.com/product-thumbs/b_Thonet_S-243_vAmPzcdkl2.jpeg?1736022038335"
+      },
+      {
+          "id": 2,
+          "name": "Product C2",
+          "price": 106.41,
+          "category": "8",
+          "image": "https://img.edilportale.com/products/Ditre-Italia_BIARRITZ_YjOMYhBXSX.jpeg?1736022128688"
+      },
+      {
+          "id": 3,
+          "name": "Product D3",
+          "price": 103.84,
+          "category": "9",
+          "image": "https://img.edilportale.com/products/Porada_DIONE_RCSMhJ3lvI.jpeg?1736022158861"
+      },
+      {
+          "id": 4,
+          "name": "Product E4",
+          "price": 62.05,
+          "category": "1",
+          "image": "https://img.edilportale.com/products/SCAB-DESIGN_MENTHA-POP_N1Ntn6hqCr.jpeg?1736022191290"
+      },
+      {
+          "id": 5,
+          "name": "Product F5",
+          "price": 46.44,
+          "category": "2",
+          "image": "https://img.edilportale.com/products/Andreu-World_BOLETE-SI1724_Jo9w16X5PH.jpeg?1736022235766"
+      },
+      {
+          "id": 6,
+          "name": "Product G6",
+          "price": 73.63,
+          "category": "8",
+          "image": "https://img.edilportale.com/products/Kartell_LA-MARIE_nf6ejCOUFL.jpeg?1736022308496"
+      },
+      {
+          "id": 7,
+          "name": "Product H7",
+          "price": 36.89,
+          "category": "8",
+          "image": "https://img.edilportale.com/products/Poliform_LEOPOLD-_11YgHTlLIK.jpeg?1736022340824"
+      },
+      {
+          "id": 8,
+          "name": "Product I8",
+          "price": 24.26,
+          "category": "9",
+          "image": "https://img.edilportale.com/products/eco-riva-industria-mobili-571303-releadae0d2.jpg?1736022375259"
+      },
+      {
+          "id": 9,
+          "name": "Product J9",
+          "price": 21.41,
+          "category": "5",
+          "image": "https://img.edilportale.com/products/gumpo_YAY_vKcEueU2FR.jpeg?1736022421688"
+      },
+      {
+          "id": 10,
+          "name": "Product K10",
+          "price": 53.17,
+          "category": "4",
+          "image": "https://img.edilportale.com/products/Exteta_MARTINGALA-1959_AWmRYOexBr.jpeg?1736022463770"
+      },
+      {
+          "id": 11,
+          "name": "Product L11",
+          "price": 70.16,
+          "category": "8",
+          "image": "https://img.edilportale.com/products/Moanne_CORAJE_OWBK31iXET.jpeg?1736022502218"
+      },
+      {
+          "id": 12,
+          "name": "Product M12",
+          "price": 85.28,
+          "category": "3",
+          "image": "https://img.edilportale.com/products/YOUPI-Bonaldo-632809-relde846a66.jpg?1736022545744"
+      },
+      {
+          "id": 13,
+          "name": "Product N13",
+          "price": 109.12,
+          "category": "4",
+          "image": "https://img.edilportale.com/products/ENNE_AFYA_ecHTSy1JZ.jpeg?1736022593456"
+         
+      },
+      {
+          "id": 14,
+          "name": "Product O14",
+          "price": 29.62,
+          "category": "5",
+          "image": "https://img.edilportale.com/products/Magis_SOUTH_1HYPzypU7.jpeg?1736022629210"
+      },
+      {
+          "id": 15,
+          "name": "Product P15",
+          "price": 54.5,
+          "category": "8",
+          "image": "https://img.edilportale.com/products/OLIVIERI_ADAM_Ops4LmVTSu.jpeg?1736022659584"
+      },
+      {
+          "id": 16,
+          "name": "Product Q16",
+          "price": 57.7,
+          "category": "2",
+          "image": "https://img.edilportale.com/products/chair-design-research-limited-trading-as-tom-dixon-585605-rel745fc336.jpg?1736022691450"
+      },
+      {
+          "id": 17,
+          "name": "Product R17",
+          "price": 13.99,
+          "category": "6",
+          "image": "https://img.edilportale.com/products/SCAB-DESIGN_MENTHA-POP_y3KCE31In.jpeg?1736022733574"
+      },
+      {
+          "id": 18,
+          "name": "Product S18",
+          "price": 66.75,
+          "category": "2",
+          "image": "https://img.edilportale.com/products/Henge_SHELLY_X3CcReCXe.jpeg?1736022765623"
+      },
+      {
+          "id": 19,
+          "name": "Product T19",
+          "price": 87.54,
+          "category": "6",
+          "image": "https://img.edilportale.com/products/SCAB-DESIGN_MENTHA_jKmsugwjd6.jpeg?1736022802749"
+      },
+      {
+          "id": 20,
+          "name": "Product U20",
+          "price": 37.04,
+          "category": "7",
+          "image": "https://img.edilportale.com/products/Bizzotto_MULTI-STYLE_EYwUkCN7GN.jpeg?1736022830946"
+      }
+  ],
+  "categories": [
+      { "id": "1", "name": "Category 1" },
+      { "id": "2", "name": "Category 2" },
+      { "id": "3", "name": "Category 3" },
+      { "id": "4", "name": "Category 4" },
+      { "id": "5", "name": "Category 5" },
+      { "id": "6", "name": "Category 6" },
+      { "id": "7", "name": "Category 7" },
+      { "id": "8", "name": "Category 8" },
+      { "id": "9", "name": "Category 9" },
+      { "id": "10", "name": "Category 10" }
+  ]
+ 
+}
