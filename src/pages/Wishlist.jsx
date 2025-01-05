@@ -16,7 +16,7 @@ console.log(wishlist)
           ))}
         </div>
       ) : (
-        <p className="text-gray-500 text-center">Your wishlist is currently empty.</p>
+        <p className="text-gray-500 text-center font-bold">Your wishlist is currently empty.</p>
       )}
     </div>
   );

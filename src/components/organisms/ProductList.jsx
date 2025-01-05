@@ -43,7 +43,7 @@ const ProductList = ({ products = [] }) => {
         {productCards.length > 0 ? (
           productCards
         ) : (
-          <p className="text-gray-500 col-span-full text-center">No products found.</p>
+          <p className="text-gray-500 col-span-full text-center font-bold">No products found.</p>
         )}
       </div>
       {visibleCount < products.length && (

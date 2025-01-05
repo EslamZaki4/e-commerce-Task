@@ -1,8 +1,6 @@
 import { setCategories, setError, setFilteredCategories, setFilteredProducts, setLoading, setProducts } from "../redux/products";
 import { api } from "./apiInstance";
 
-
-
 // Fetch Data from API
 export const fetchProductsAndCategories = () => async (dispatch) => {
  
